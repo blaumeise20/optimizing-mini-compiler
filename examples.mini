@@ -1,0 +1,62 @@
+PROGRAM
+VAR
+    a: ARRAY 10 OF ARRAY 10 OF INTEGER;
+    i, j: INTEGER;
+BEGIN
+    //--- read some data
+    i := 0;
+    WHILE i < 10 DO
+        j := 0;
+        WHILE j < 10 DO
+            READ a[i][j];
+            j := j + 1
+        END;
+        i := i + 1
+    END;
+    //--- add 1 to every value
+    i := 0;
+    WHILE i < 10 DO
+        j := 0;
+        WHILE j < 10 DO
+            a[i][j] := a[i][j] + 1;
+            j := j + 1
+        END;
+        i := i + 1
+    END
+END.
+
+PROGRAM
+VAR
+    i, sum: INTEGER;
+    a: ARRAY 10 OF INTEGER;
+BEGIN
+    i := 0;
+    WHILE i < 10 DO
+        READ a[i];
+        i := i + 1
+    END;
+    i := 1;
+    sum := 0;
+    WHILE i < 10 DO
+        sum := sum + (a[i] - a[i-1]);
+        i := i + 1
+    END;
+    WRITE sum
+END.
+
+PROGRAM
+VAR
+    i, j: INTEGER;
+BEGIN
+    i := 0;
+
+    IF i = 0 THEN
+        j := 1
+    ELSIF i < 10 THEN
+        j := 2
+    ELSE
+        j := 3
+    END;
+
+    WRITE j
+END.
